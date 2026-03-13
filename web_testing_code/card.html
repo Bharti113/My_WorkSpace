@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheme Portal Cards</title>
+    <!-- Importing FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Importing Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS Variables for Easy Theming --- */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- Global Reset & Layout --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        /* --- Grid Layout --- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        /* --- Card Styling --- */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* Hover Effect: Lift and Shadow */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Top colored accent line */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* --- Icon Styling --- */
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .card:hover .icon-box {
+            background-color: var(--primary-color);
+            color: white;
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        /* --- Typography --- */
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            flex-grow: 1; /* Pushes button to bottom */
+        }
+
+        /* --- Button Styling --- */
+        .card-btn {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .card-btn i {
+            font-size: 0.8rem;
+            transition: transform 0.2s;
+        }
+
+        .card-btn:hover {
+            color: var(--secondary-color);
+        }
+
+        .card-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        /* --- Specific Variations (Optional) --- */
+        /* You can add specific classes if you want different colors for different cards */
+        .card.track .icon-box { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .card.track:hover .icon-box { background-color: #10b981; }
+        .card.track::before { background: linear-gradient(90deg, #10b981, #34d399); }
+
+        .card.help .icon-box { background-color: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+        .card.help:hover .icon-box { background-color: #f59e0b; }
+        .card.help::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Group 1: Action Oriented -->
+        <h2 class="section-title">Quick Actions</h2>
+        <div class="card-grid">
+            
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-check-double"></i>
+                </div>
+                <h3>Check Eligibility</h3>
+                <p>Verify if you qualify for government schemes based on your current profile and income details.</p>
+                <a href="#" class="card-btn">Start Check <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-file-signature"></i>
+                </div>
+                <h3>Apply Scheme</h3>
+                <p>Submit your application form online. Ensure all documents are uploaded in the correct format.</p>
+                <a href="#" class="card-btn">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 3 (Special Color) -->
+            <div class="card track">
+                <div class="icon-box">
+                    <i class="fa-solid fa-magnifying-glass-location"></i>
+                </div>
+                <h3>Track Application</h3>
+                <p>Monitor the real-time status of your submitted applications using your reference ID.</p>
+                <a href="#" class="card-btn">Track Status <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+
+        <!-- Group 2: Information & Discovery -->
+        <h2 class="section-title">Explore & Learn</h2>
+        <div class="card-grid">
+            
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3>Browse Schemes</h3>
+                <p>Explore the full catalog of available schemes categorized by sector, state, and eligibility.</p>
+                <a href="#" class="card-btn">View Catalog <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Scheme Ranking</h3>
+                <p>See the top-performing schemes and read success stories from beneficiaries across the country.</p>
+                <a href="#" class="card-btn">View Rankings <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 6 (Special Color) -->
+            <div class="card help">
+                <div class="icon-box">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <h3>Help & Guidance</h3>
+                <p>Find FAQs, video tutorials, and contact support if you face any issues during the process.</p>
+                <a href="#" class="card-btn">Get Help <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

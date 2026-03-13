@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Portal - Government Scheme Login</title>
+    <link rel="stylesheet" href="login.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-shape"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    
+    <!-- Header -->
+    <header class="gov-header">
+        <div class="gov-logo">
+            <i class="fa-solid fa-emblem-of-india"></i>
+            <span>National Service Portal</span>
+        </div>
+        <div class="gov-tagline">Ministry of Digital Services</div>
+    </header>
+
+    <!-- Main Login Container -->
+    <main class="login-container">
+        <div class="login-box">
+            <!-- Scheme Banner -->
+            <div class="scheme-banner">
+                <div class="scheme-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <h2>Pradhan Mantri Jan Arogya Yojana</h2>
+                <p>Ayushman Bharat PM-JAY</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="login-form">
+                <!-- Login Type Tabs -->
+                <div class="login-tabs">
+
+                    <button type="button" class="tab-btn active" data-tab="mobile">
+                        <i class="fa-solid fa-mobile-screen"></i> Mobile
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="aadhar">
+                        <i class="fa-solid fa-id-card"></i> Aadhaar
+                    </button>
+                    
+                    <button type="button" class="tab-btn" data-tab="username">
+                        <i class="fa-solid fa-user"></i> Username
+                    </button>
+                </div>
+
+
+                <!-- Mobile Login -->
+                <div class="tab-content active" id="mobile-panel">
+                    <div class="input-group">
+                        <label for="mobile">
+                            <i class="fa-solid fa-mobile-screen"></i> Registered Mobile Number
+                        </label>
+                        <div class="input-wrapper">
+                            <span class="country-code">+91</span>
+                            <input 
+                                type="tel" 
+                                id="mobile" 
+                                placeholder="Enter 10-digit mobile number"
+                                maxlength="10"
+                                autocomplete="off"
+                            >
+                        </div>
+                    </div>
+                    <div class="input-group otp-section" id="otpSection" style="display: none;">
+                        <label for="otp">
+                            <i class="fa-solid fa-lock"></i> Enter OTP
+                        </label>
+                        <div class="otp-inputs">
+                            <input type="text" class="otp-box" maxlength="1" data-index="0">
+                            <input type="text" class="otp-box" maxlength="1" data-index="1">
+                            <input type="text" class="otp-box" maxlength="1" data-index="2">
+                            <input type="text" class="otp-box" maxlength="1" data-index="3">
+                            <input type="text" class="otp-box" maxlength="1" data-index="4">
+                            <input type="text" class="otp-box" maxlength="1" data-index="5">
+                        </div>
+                        <div class="resend-otp">
+                            <span>Didn't receive OTP?</span>
+                            <button type="button" id="resendOtp" class="link-btn">Resend OTP</button>
+                            <span class="timer" id="otpTimer">(60s)</span>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Aadhaar Login -->
+                <div class="tab-content" id="aadhar-panel">
+                    <div class="input-group">
+                        <label for="aadhar">
+                            <i class="fa-solid fa-id-card"></i> Aadhaar Number / Virtual ID
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="aadhar" 
+                                placeholder="XXXX XXXX XXXX XXXX"
+                                maxlength="19"
+                                autocomplete="off"
+                            >
+                            <span class="input-icon">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </span>
+                        </div>
+                        <div class="input-hint">Enter 12-digit Aadhaar or 16-digit Virtual ID</div>
+                    </div>
+                </div>
+
+
+                <!-- Username Login -->
+                <div class="tab-content" id="username-panel">
+                    <div class="input-group">
+                        <label for="username">
+                            <i class="fa-solid fa-user"></i> Username / Email
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="username" 
+                                placeholder="Enter username or email"
+                                autocomplete="off"
+                            >
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">
+                            <i class="fa-solid fa-lock"></i> Password
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                placeholder="Enter password"
+                                autocomplete="current-password"
+                            >
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </button>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Captcha -->
+                <div class="captcha-container">
+                    <div class="captcha-box">
+                        <div class="captcha-code" id="captchaCode">X7K9mP2q</div>
+                        <button type="button" class="refresh-captcha" id="refreshCaptcha">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+                    </div>
+                    <div class="input-group captcha-input-group">
+                        <input 
+                            type="text" 
+                            id="captchaInput" 
+                            placeholder="Enter captcha code"
+                            maxlength="8"
+                        >
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="login-btn" id="loginBtn">
+                    <span class="btn-text">Secure Login</span>
+                    <span class="btn-loader" style="display: none;">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i> Processing...
+                    </span>
+                    <i class="fa-solid fa-arrow-right btn-icon"></i>
+                </button>
+
+                <!-- Alternative Actions -->
+                <div class="alt-actions">
+                    <p>New user? <a href="#" class="register-link">Register Here</a></p>
+                    <p>Need help? <a href="#" class="help-link">Get Assistance</a></p>
+                </div>
+            </form>
+
+            <!-- Security Notice -->
+            <div class="security-notice">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>
+                    <strong>Secure Login:</strong> Your connection is encrypted. 
+                    Never share your credentials with anyone.
+                </span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="gov-footer">
+            <p>© 2024 National Service Portal | Government of India</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Help</a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="toast-icon"></i>
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

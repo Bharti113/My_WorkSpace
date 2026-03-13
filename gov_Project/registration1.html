@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - National Service Portal</title>
+    <link rel="stylesheet" href="registration.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-shape"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    
+    <!-- Header -->
+    <header class="gov-header">
+        <div class="gov-logo">
+            <i class="fa-solid fa-emblem-of-india"></i>
+            <span>National Service Portal</span>
+        </div>
+        <div class="gov-tagline">Ministry of Digital Services</div>
+    </header>
+
+    <!-- Main Registration Container -->
+    <main class="register-container">
+        <div class="register-box">
+            <!-- Scheme Banner -->
+            <div class="scheme-banner">
+                <div class="scheme-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h2>New Beneficiary Registration</h2>
+                <p>Pradhan Mantri Jan Arogya Yojana</p>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="step-indicators">
+                    <div class="step active" data-step="1">
+                        <div class="step-circle">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <span>Personal</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <span>Contact</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle">
+                            <i class="fa-solid fa-file-upload"></i>
+                        </div>
+                        <span>Documents</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-circle">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span>Verify</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <form id="registerForm" class="register-form">
+                
+                <!-- Step 1: Personal Details -->
+                <div class="form-step active" id="step1">
+                    <h3 class="step-title">
+                        <i class="fa-solid fa-user"></i>
+                        Personal Information
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="firstName">
+                                <i class="fa-solid fa-user"></i> First Name
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="firstName" placeholder="Enter first name" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="middleName">
+                                <i class="fa-solid fa-user"></i> Middle Name
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="middleName" placeholder="Enter middle name">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="lastName">
+                                <i class="fa-solid fa-user"></i> Last Name
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="lastName" placeholder="Enter last name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="dob">
+                                <i class="fa-solid fa-calendar"></i> Date of Birth
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="date" id="dob" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="gender">
+                                <i class="fa-solid fa-venus-mars"></i> Gender
+                            </label>
+                            <div class="input-wrapper select-wrapper">
+                                <select id="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="transgender">Transgender</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="aadhaar">
+                                <i class="fa-solid fa-id-card"></i> Aadhaar Number
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="aadhaar" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+                            </div>
+                            <div class="input-hint">12-digit Aadhaar number</div>
+                        </div>
+                        <div class="input-group">
+                            <label for="aadhaarName">
+                                <i class="fa-solid fa-file-signature"></i> Name as on Aadhaar
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="aadhaarName" placeholder="Name as per Aadhaar" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="fatherName">
+                                <i class="fa-solid fa-person"></i> Father's Name
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fatherName" placeholder="Enter father's name" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="motherName">
+                                <i class="fa-solid fa-person-dress"></i> Mother's Name
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="motherName" placeholder="Enter mother's name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="category">
+                                <i class="fa-solid fa-users"></i> Category
+                            </label>
+                            <div class="input-wrapper select-wrapper">
+                                <select id="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="general">General</option>
+                                    <option value="obc">OBC</option>
+                                    <option value="sc">SC</option>
+                                    <option value="st">ST</option>
+                                    <option value="ews">EWS</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="maritalStatus">
+                                <i class="fa-solid fa-ring"></i> Marital Status
+                            </label>
+                            <div class="input-wrapper select-wrapper">
+                                <select id="maritalStatus" required>
+                                    <option value="">Select Status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-buttons">
+                        <button type="button" class="btn-next" onclick="nextStep(1)">
+                            Next Step
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Contact Details -->
+                <div class="form-step" id="step2">
+                    <h3 class="step-title">
+                        <i class="fa-solid fa-phone"></i>
+                        Contact Information
+                    </h3>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="mobile">
+                                <i class="fa-solid fa-mobile-screen"></i> Mobile Number
+                            </label>
+                            <div class="input-wrapper">
+                                <span class="country-code">+91</span>
+                                <input type="tel" id="mobile" placeholder="10-digit mobile number" maxlength="10" required>
+                            </div>
+                            <button type="button" class="verify-btn" id="sendOtpBtn" onclick="sendMobileOTP()">
+                                <i class="fa-solid fa-paper-plane"></i> Send OTP
+                            </button>
+                        </div>
+                        <div class="input-group otp-group" id="mobileOtpGroup" style="display: none;">
+                            <label for="mobileOtp">
+                                <i class="fa-solid fa-lock"></i> Enter OTP
+                            </label>
+                            <div class="otp-inputs">
+                                <input type="text" class="otp-box" maxlength="1" data-index="0">
+                                <input type="text" class="otp-box" maxlength="1" data-index="1">
+                                <input type="text" class="otp-box" maxlength="1" data-index="2">
+                                <input type="text" class="otp-box" maxlength="1" data-index="3">
+                                <input type="text" class="otp-box" maxlength="1" data-index="4">
+                                <input type="text" class="otp-box" maxlength="1" data-index="5">
+                            </div>
+                            <div class="otp-actions">
+                                <span class="timer" id="mobileTimer">(60s)</span>
+                                <button type="button" class="link-btn" onclick="resendMobileOTP()">Resend OTP</button>
+                            </div>
+                            <i class="fa-solid fa-circle-check verified-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="email">
+                                <i class="fa-solid fa-envelope"></i> Email Address
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="email" id="email" placeholder="Enter email address" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="altMobile">
+                                <i class="fa-solid fa-phone"></i> Alternate Mobile
+                            </label>
+                            <div class="input-wrapper">
+                                <span class="country-code">+91</span>
+                                <input type="tel" id="altMobile" placeholder="Alternate mobile number" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="section-title">
+                        <i class="fa-solid fa-location-dot"></i> Permanent Address
+                    </h4>
+
+                    <div class="form-row">
+                        <div class="input-group full-width">
+                            <label for="address">
+                                <i class="fa-solid fa-map-marker-alt"></i> Full Address
+                            </label>
+                            <div class="input-wrapper">
+                                <textarea id="address" rows="2" placeholder="Enter full address" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="state">
+                                <i class="fa-solid fa-map"></i> State
+                            </label>
+                            <div class="input-wrapper select-wrapper">
+                                <select id="state" required>
+                                    <option value="">Select State</option>
+                                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="tamil-nadu">Tamil Nadu</option>
+                                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    <option value="west-bengal">West Bengal</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="district">
+                                <i class="fa-solid fa-city"></i> District
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="district" placeholder="Enter district" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="pincode">
+                                <i class="fa-solid fa-map-pin"></i> PIN Code
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="pincode" placeholder="6-digit PIN code" maxlength="6" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="taluka">
+                                <i class="fa-solid fa-map"></i> Taluka / Block
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="taluka" placeholder="Enter taluka/block" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group checkbox-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="sameAddress">
+                                <span class="checkmark"></span>
+                                Same as permanent address
+                            </label>
+                        </div>
+                    </div>
+
+                    <h4 class="section-title">
+                        <i class="fa-solid fa-lock"></i> Create Password
+                    </h4>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="newPassword">
+                                <i class="fa-solid fa-key"></i> Password
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="password" id="newPassword" placeholder="Create password" required>
+                                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('newPassword', this)">
+                                    <i class="fa-regular fa-eye-slash"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bar"></div>
+                                <span class="strength-text"></span>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="confirmPassword">
+                                <i class="fa-solid fa-key"></i> Confirm Password
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('confirmPassword', this)">
+                                    <i class="fa-regular fa-eye-slash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="password-requirements">
+                        <p><i class="fa-solid fa-info-circle"></i> Password must contain:</p>
+                        <ul>
+                            <li class="req" data-req="length">At least 8 characters</li>
+                            <li class="req" data-req="uppercase">One uppercase letter</li>
+                            <li class="req" data-req="lowercase">One lowercase letter</li>
+                            <li class="req" data-req="number">One number</li>
+                            <li class="req" data-req="special">One special character</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-buttons">
+                        <button type="button" class="btn-prev" onclick="prevStep(2)">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Previous
+                        </button>
+                        <button type="button" class="btn-next" onclick="nextStep(2)">
+                            Next Step
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Document Upload -->
+                <div class="form-step" id="step3">
+                    <h3 class="step-title">
+                        <i class="fa-solid fa-file-upload"></i>
+                        Document Upload
+                    </h3>
+
+                    <div class="document-upload-info">
+                        <i class="fa-solid fa-info-circle"></i>
+                        <p>Upload clear, legible documents in JPG, PNG, or PDF format. Maximum file size: 2MB each.</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="upload-box">
+                            <div class="upload-area" id="aadhaarUpload">
+                                <i class="fa-solid fa-id-card"></i>
+                                <h4>Aadhaar Card</h4>
+                                <p>Front & Back</p>
+                                <input type="file" accept="image/*,.pdf" hidden>
+                                <button type="button" class="upload-btn

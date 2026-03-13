@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Punjab Scheme Sahayak</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ---------- GLOBAL ---------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+body{
+background:#f5f8fb;
+color:#333;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 60px;
+background:#eef3f7;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:20px;
+font-weight:600;
+}
+
+.logo img{
+width:40px;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.nav-links a:hover{
+color:#2f5d8c;
+}
+
+.login-btn{
+background:#2f5d8c;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+position:relative;
+padding:80px 60px;
+color:white;
+
+background-image:linear-gradient(
+rgba(0,0,0,0.4),
+rgba(0,0,0,0.4)
+),
+url("landing_page.png");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero-text h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero-text p{
+font-size:16px;
+margin-bottom:20px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+.primary-btn{
+background:#2f5d8c;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.secondary-btn{
+background:white;
+border:1px solid #2f5d8c;
+padding:12px 20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.hero-image img{
+width:420px;
+border-radius:10px;
+}
+
+/* ---------- FEATURES ---------- */
+
+.features{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:40px 60px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card i{
+font-size:28px;
+color:#2f5d8c;
+margin-bottom:10px;
+}
+
+/* ---------- SECOND ROW ---------- */
+
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:20px 60px;
+}
+
+.service-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* ---------- STATS ---------- */
+
+.stats{
+display:flex;
+justify-content:space-around;
+margin:40px 60px;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.stat h2{
+font-size:32px;
+color:#2f5d8c;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+display:flex;
+justify-content:space-between;
+padding:25px 60px;
+background:#eef3f7;
+margin-top:40px;
+}
+
+.footer-links a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+}
+
+.footer-links a:hover{
+color:#2f5d8c;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-image img{
+width:100%;
+margin-top:20px;
+}
+
+.features{
+grid-template-columns:1fr 1fr;
+}
+
+.services{
+grid-template-columns:1fr;
+}
+
+.stats{
+flex-direction:column;
+gap:20px;
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="logo">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Seal_of_the_Government_Of_Punjab_%28Black_On_White%29.svg/330px-Seal_of_the_Government_Of_Punjab_%28Black_On_White%29.svg.png">
+<span>Punjab Scheme Sahayak</span>
+</div>
+
+<nav class="nav-links">
+<a href="#">Home</a>
+<a href="#">Schemes</a>
+<a href="#">Eligibility Checker</a>
+<a href="#">Scheme Ranking</a>
+<a href="#">Apply Now</a>
+<a href="#">Track Application</a>
+</nav>
+
+<button class="login-btn">Login / Register</button>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Find the Right Government Scheme for You</h1>
+
+<p>
+Punjab Scheme Sahayak helps discover and apply for welfare
+schemes using eligibility checking and scheme ranking.
+</p>
+
+<div class="hero-buttons">
+<button class="primary-btn">Check Eligibility</button>
+<button class="secondary-btn">Explore Schemes</button>
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Punjab_Vidhan_Sabha.jpg">
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<div class="card">
+<i class="fa-solid fa-clipboard-check"></i>
+<h3>Smart Eligibility Checker</h3>
+<p>Instantly determine which schemes you qualify for.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-chart-line"></i>
+<h3>Scheme Ranking System</h3>
+<p>AI ranking of schemes based on benefits and relevance.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-file-arrow-up"></i>
+<h3>Apply Scheme Program</h3>
+<p>Apply digitally without visiting government offices.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-clock"></i>
+<h3>Application Tracking</h3>
+<p>Track the real-time actions of your application.</p>
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services">
+
+<div class="service-card">
+<h3>Simple Online Application</h3>
+<p>Apply digitally without visiting government offices.</p>
+</div>
+
+<div class="service-card">
+<h3>Application Tracking</h3>
+<p>Track real-time status of submitted applications.</p>
+</div>
+
+<div class="service-card">
+<h2>345+</h2>
+<p>Number of schemes available</p>
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat">
+<h2>345+</h2>
+<p>Number of schemes available</p>
+</div>
+
+<div class="stat">
+<h2>20M</h2>
+<p>Citizens served</p>
+</div>
+
+<div class="stat">
+<h2>160,000</h2>
+<p>Applications processed</p>
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div>
+<strong>Punjab Government</strong>
+</div>
+
+<div>
+Contact: +91 9076945061
+</div>
+
+<div class="footer-links">
+<a href="#">Privacy Policy</a>
+<a href="#">Accessibility Statement</a>
+</div>
+
+</footer>
+
+
+</body>
+</html>

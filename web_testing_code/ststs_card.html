@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    /* 1. CSS VARIABLES for easy theming */
+    :root {
+        --primary-color: #4f46e5; /* Indigo */
+        --secondary-color: #818cf8;
+        --bg-color: #f3f4f6;
+        --card-bg: rgba(255, 255, 255, 0.95);
+        --text-main: #1f2937;
+        --text-muted: #6b7280;
+        --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* 2. SECTION STYLING */
+    .stats {
+        background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+        padding: 4rem 2rem;
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 300px;
+    }
+
+    /* 3. FLEX CONTAINER */
+    .stats-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    /* 4. CARD STYLING */
+    .stat {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-sm);
+        flex: 1 1 250px; /* Grow, shrink, basis */
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px); /* Glassmorphism effect */
+    }
+
+    /* Hover Effect: Lift and Shadow */
+    .stat:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-color);
+    }
+
+    /* Decorative top border */
+    .stat::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .stat:hover::before {
+        opacity: 1;
+    }
+
+    /* 5. TYPOGRAPHY */
+    .stat h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 0 0 0.5rem 0;
+        color: var(--primary-color);
+        letter-spacing: -1px;
+        line-height: 1;
+    }
+
+    .stat p {
+        font-size: 1rem;
+        color: var(--text-muted);
+        margin: 0;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* 6. ICONS (Using CSS Pseudo-elements) */
+    .stat::after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(79, 70, 229, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        opacity: 0.5;
+    }
+
+    /* Specific icons for each stat */
+    .stat:nth-child(1)::after { content: '📊'; } /* Chart */
+    .stat:nth-child(2)::after { content: '👥'; } /* People */
+    .stat:nth-child(3)::after { content: '📝'; } /* Document */
+
+    /* 7. RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+        .stats {
+            padding: 3rem 1rem;
+        }
+        
+        .stat h2 {
+            font-size: 2.5rem;
+        }
+        
+        .stat {
+            padding: 2rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- STATS -->
+<section class="stats">
+    <div class="stats-container">
+        <div class="stat">
+            <h2>345+</h2>
+            <p>Number of schemes available</p>
+        </div>
+
+        <div class="stat">
+            <h2>20M</h2>
+            <p>Citizens served</p>
+        </div>
+
+        <div class="stat">
+            <h2>160k</h2>
+            <p>Applications processed</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
