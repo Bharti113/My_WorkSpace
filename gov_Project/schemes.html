@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Schemes | Punjab Scheme Sahayak</title>
+
+<link rel="stylesheet" href="schemes.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-landmark"></i>
+<span>Punjab Scheme Sahayak</span>
+
+</div>
+
+<nav class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="schemes.html" class="active">Schemes</a>
+
+<a href="eligibility.html">Eligibility Checker</a>
+
+<a href="ranking.html">Scheme Ranking</a>
+
+<a href="track.html">Track Application</a>
+
+</nav>
+
+<button id="loginBtn" class="login-btn">
+Login / Register
+</button>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+<h1>Government Welfare Schemes</h1>
+
+<p>
+Discover government schemes and apply digitally
+through Punjab Scheme Sahayak.
+</p>
+
+</section>
+
+
+<!-- ================= SEARCH + FILTER ================= -->
+
+<section class="search-filter">
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search schemes..."
+aria-label="Search schemes"
+/>
+
+<button id="searchBtn">
+
+<i class="fa-solid fa-search"></i>
+
+</button>
+
+</div>
+
+
+<div class="filters">
+
+<select id="categoryFilter">
+
+<option value="all">All Categories</option>
+<option value="agriculture">Agriculture</option>
+<option value="health">Health</option>
+<option value="education">Education</option>
+<option value="women">Women Welfare</option>
+
+</select>
+
+
+<select id="departmentFilter">
+
+<option value="all">All Departments</option>
+<option value="agriculture">Agriculture Department</option>
+<option value="health">Health Department</option>
+<option value="education">Education Department</option>
+
+</select>
+
+</div>
+
+</section>
+
+<!-- ================= SCHEMES LIST ================= -->
+
+<section class="schemes-container">
+
+<div id="schemesGrid" class="scheme-grid">
+
+<!-- CARD 1 -->
+
+<article class="scheme-card" data-category="agriculture">
+
+<div class="scheme-icon">
+<i class="fa-solid fa-seedling"></i>
+</div>
+
+<h3 class="scheme-title">PM Kisan Samman Nidhi</h3>
+
+<p class="scheme-desc">
+Provides financial assistance to farmers
+to support agricultural needs.
+</p>
+
+<div class="scheme-meta">
+
+<span>
+<i class="fa-solid fa-building"></i>
+Agriculture Department
+</span>
+
+<span>
+<i class="fa-solid fa-users"></i>
+Farmers
+</span>
+
+</div>
+
+<div class="scheme-actions">
+
+<button class="apply-btn" data-scheme-id="PMKISAN001">
+Apply Now
+</button>
+
+<button class="details-btn" data-scheme-id="PMKISAN001">
+View Details
+</button>
+
+</div>
+
+</article>
+
+
+<!-- CARD 2 -->
+
+<article class="scheme-card" data-category="health">
+
+<div class="scheme-icon">
+<i class="fa-solid fa-heart-pulse"></i>
+</div>
+
+<h3 class="scheme-title">Ayushman Bharat Yojana</h3>
+
+<p class="scheme-desc">
+Free healthcare coverage for economically weaker families.
+</p>
+
+<div class="scheme-meta">
+
+<span>
+<i class="fa-solid fa-building"></i>
+Health Department
+</span>
+
+<span>
+<i class="fa-solid fa-users"></i>
+Citizens
+</span>
+
+</div>
+
+<div class="scheme-actions">
+
+<button class="apply-btn" data-scheme-id="AYUSH001">
+Apply Now
+</button>
+
+<button class="details-btn" data-scheme-id="AYUSH001">
+View Details
+</button>
+
+</div>
+
+</article>
+
+
+<!-- CARD 3 -->
+
+<article class="scheme-card" data-category="education">
+
+<div class="scheme-icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+
+<h3 class="scheme-title">Post Matric Scholarship</h3>
+
+<p class="scheme-desc">
+Financial support for students pursuing higher education.
+</p>
+
+<div class="scheme-meta">
+
+<span>
+<i class="fa-solid fa-building"></i>
+Education Department
+</span>
+
+<span>
+<i class="fa-solid fa-users"></i>
+Students
+</span>
+
+</div>
+
+<div class="scheme-actions">
+
+<button class="apply-btn" data-scheme-id="SCHOLAR001">
+Apply Now
+</button>
+
+<button class="details-btn" data-scheme-id="SCHOLAR001">
+View Details
+</button>
+
+</div>
+
+</article>
+
+
+<!-- CARD 4 -->
+
+<article class="scheme-card" data-category="women">
+
+<div class="scheme-icon">
+<i class="fa-solid fa-female"></i>
+</div>
+
+<h3 class="scheme-title">Women Empowerment Scheme</h3>
+
+<p class="scheme-desc">
+Support programs for women's education, employment and welfare.
+</p>
+
+<div class="scheme-meta">
+
+<span>
+<i class="fa-solid fa-building"></i>
+Women Welfare Department
+</span>
+
+<span>
+<i class="fa-solid fa-users"></i>
+Women
+</span>
+
+</div>
+
+<div class="scheme-actions">
+
+<button class="apply-btn" data-scheme-id="WOMEN001">
+Apply Now
+</button>
+
+<button class="details-btn" data-scheme-id="WOMEN001">
+View Details
+</button>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- ================= PAGINATION ================= -->
+
+<section class="pagination">
+
+<button id="prevPage">
+Previous
+</button>
+
+<span id="pageNumber">
+Page 1
+</span>
+
+<button id="nextPage">
+Next
+</button>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="footer-left">
+
+<h3>Punjab Scheme Sahayak</h3>
+
+<p>
+
+Helping citizens discover and apply for
+government schemes easily.
+
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#">Privacy Policy</a>
+
+<a href="#">Accessibility</a>
+
+<a href="#">Helpdesk</a>
+
+</div>
+
+
+<div class="footer-contact">
+
+<p>Contact: +91 9076945061</p>
+
+</div>
+
+</footer>
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="js/schemes.js"></script>
+
+</body>
+</html>

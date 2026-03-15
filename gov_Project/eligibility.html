@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Scheme Recommendation | Punjab Scheme Sahayak</title>
+
+<link rel="stylesheet" href="eligibility.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="logo">
+<i class="fa-solid fa-landmark"></i>
+<span>Punjab Scheme Sahayak</span>
+</div>
+
+<nav class="nav-links">
+
+<a href="index.html">Home</a>
+<a href="schemes.html">Schemes</a>
+<a href="eligibility.html" class="active">Eligibility Checker</a>
+<a href="ranking.html">Scheme Ranking</a>
+<a href="track.html">Track Application</a>
+
+</nav>
+
+<button class="login-btn">Login / Register</button>
+
+</header>
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+<h1>AI Scheme Recommendation System</h1>
+
+<p>
+Enter your details and our AI engine will recommend
+the most relevant government schemes for you.
+</p>
+
+</section>
+
+
+
+<!-- USER INPUT FORM -->
+
+<section class="eligibility-form">
+
+<form id="schemeForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Age</label>
+
+<input type="number" id="age" required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Gender</label>
+
+<select id="gender">
+
+<option value="">Select</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Annual Income</label>
+
+<input type="number" id="income">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Occupation</label>
+
+<select id="occupation">
+
+<option value="">Select</option>
+<option value="farmer">Farmer</option>
+<option value="student">Student</option>
+<option value="worker">Worker</option>
+<option value="business">Business</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Category</label>
+
+<select id="category">
+
+<option value="">Select</option>
+<option value="general">General</option>
+<option value="obc">OBC</option>
+<option value="sc">SC</option>
+<option value="st">ST</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Location</label>
+
+<input type="text" id="location">
+
+</div>
+
+</div>
+
+
+<button class="find-btn">
+
+<i class="fa-solid fa-brain"></i>
+Find AI Recommendations
+
+</button>
+
+</form>
+
+</section>
+
+
+
+<!-- USER PROFILE SUMMARY -->
+
+<section class="profile-summary">
+
+<h2>Your Profile</h2>
+
+<p id="profileInfo">
+
+Fill the form to see profile summary.
+
+</p>
+
+</section>
+
+
+
+<!-- RECOMMENDATIONS -->
+
+<section class="recommendations">
+
+<h2>Recommended Schemes</h2>
+
+<div id="recommendationResults" class="scheme-grid">
+
+<!-- AI recommendations appear here -->
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-left">
+
+<h3>Punjab Scheme Sahayak</h3>
+
+<p>
+Helping citizens discover and apply for
+government welfare schemes easily.
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#">Privacy Policy</a>
+<a href="#">Accessibility</a>
+<a href="#">Helpdesk</a>
+
+</div>
+
+
+</footer>
+
+
+<script src="eligibility.js"></script>
+
+</body>
+</html>
